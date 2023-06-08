@@ -9,11 +9,15 @@ function App() {
     setTaskList([...taskList, task]);
     setTask("");
   }
-  function removeTask() {}
-  const clearTaskList = () => {
+  function removeTask() {
+    // let taskArray = [...taskList];
+    // taskArray.splice(id);
+    // setTask(taskArray);
+  }
+  function clearTaskList() {
     setTaskList([]);
     setTask("");
-  };
+  }
   return (
     <div className="wrapper">
       <h1>Todo app</h1>
@@ -35,7 +39,7 @@ function App() {
       <ul>
         {taskList.map((task) => {
           return (
-            <li key={task.id}>
+            <li key={task}>
               <div className="task-item">
                 {task} <button onClick={removeTask}>delete</button>
               </div>
