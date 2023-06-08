@@ -9,10 +9,9 @@ function App() {
     setTaskList([...taskList, task]);
     setTask("");
   }
-  function removeTask() {
-    // let taskArray = [...taskList];
-    // taskArray.splice(id);
-    // setTask(taskArray);
+  function removeTask(deletedTask) {
+    const taskArray = taskList.filter((taskItem) => taskItem !== deletedTask);
+    setTaskList(taskArray);
   }
   function clearTaskList() {
     setTaskList([]);
